@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2>Calculadora volume</h2>
+    </header>
+
+    <div id="center-container">
+        <button class="iniciar-button" onclick="abrirPopup()">Iniciar</button>
+    </div>
+
+    <footer>
+        <p>Calcule seu volume</p>
+    </footer>
+
+    <video autoplay muted loop id="background-video">
+        <source src="fundo.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function abrirPopup() {
+            var left = (window.innerWidth - 400) / 2;
+            var top = (window.innerHeight - 400) / 2;
+
+            // Abrir a pop-up diretamente
+            var popup = window.open('popup.html', '_blank', 'width=400,height=400,left=' + left + ',top=' + top);
+
+            // Esperar a pop-up carregar antes de enviar a mensagem
+            popup.addEventListener('load', function() {
+                // Enviar mensagem para a pop-up
+                popup.postMessage("iniciarCalculo", "*");
+            });
+        }
+    </script>
+</body>
+</html>
