@@ -19,6 +19,6 @@ function calcular() {
 	document.getElementById("resultado").innerHTML = "O aquário tem " + litros + " litros de capacidade.";
 
 	// Desenha o aquário no canvas
-	
+	desenharAquario(comprimento, largura, altura);
 }
 
